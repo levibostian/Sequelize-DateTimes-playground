@@ -1,0 +1,26 @@
+{
+  "name": "sequelize-datetimes-playground",
+  "version": "0.1.0",
+  "description": "Playing around with Sequelize and how it handles DateTimes with Postgres databases.",
+  "main": "index.js",
+  "scripts": {
+    "run": "docker-compose -f docker-compose.yml up --build --abort-on-container-exit",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/levibostian/Sequelize-DateTimes-playground"
+  },
+  "author": "Levi Bostian <levi.bostian@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/levibostian/Sequelize-DateTimes-playground/issues"
+  },
+  "homepage": "https://github.com/levibostian/Sequelize-DateTimes-playground#readme",
+  "dependencies": {
+    "moment-timezone": "^0.5.13",
+    "momentjs": "^2.0.0",
+    "pg": "6.4.2",
+    "sequelize": "^4.15.0"
+  }
+}

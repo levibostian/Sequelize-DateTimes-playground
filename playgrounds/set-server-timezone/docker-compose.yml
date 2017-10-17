@@ -1,0 +1,26 @@
+version: '2'
+services:
+  set-server-timezone-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: node index.js
+    container_name: set-server-timezone-app
+    volumes:
+      - .:/home/app/
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - set-server-timezone-db
+  set-server-timezone-db:
+    image: "postgres:9.6.2-alpine"
+    container_name: set-server-timezone-db
+    expose:
+      - "5432"
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=app-user
+      - PGDATA=/var/lib/postgresql/data/pgdata
+      - POSTGRES_PASSWORD=12345
+      - POSTGRES_DB=app-db
